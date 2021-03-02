@@ -9,7 +9,8 @@ class FriendsController < ApplicationController
     @markers = @friends.geocoded.map do |friend|
       {
         lat: friend.latitude,
-        lng: friend.longitude
+        lng: friend.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { friend: friend })
       }
     end
   end
