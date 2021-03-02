@@ -10,7 +10,8 @@ class FriendsController < ApplicationController
       {
         lat: friend.latitude,
         lng: friend.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { friend: friend })
+        infoWindow: render_to_string(partial: "info_window", locals: { friend: friend }),
+        image_url: helpers.asset_url('icon.png')
       }
     end
   end
